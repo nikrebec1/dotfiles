@@ -1,5 +1,5 @@
 -- ==========================================================================
--- 0. LEADER KEY (Must be set before plugins!)
+-- 0. LEADER KEY (Must be set before plugins!!)
 -- ==========================================================================
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
