@@ -178,7 +178,16 @@ require("lazy").setup({
 		},
 		opts_extend = { "sources.default" },
 	},
-	{ "nvim-mini/mini.nvim", version = false },
+	{
+		"nvim-mini/mini.nvim",
+		version = false,
+		config = function()
+			require("mini.ai").setup()
+			require("mini.surround").setup()
+			require("mini.pairs").setup()
+			require("mini.diff").setup()
+		end,
+	},
 	{
 		"MagicDuck/grug-far.nvim",
 		cmd = "GrugFar",
@@ -320,6 +329,27 @@ require("lazy").setup({
 				end,
 				desc = "Previous reference",
 			},
+			{
+				"<leader>gg",
+				function()
+					Snacks.lazygit()
+				end,
+				desc = "Lazygit",
+			},
+			{
+				"<leader>gl",
+				function()
+					Snacks.lazygit.log()
+				end,
+				desc = "Git log",
+			},
+			{
+				"<leader>gf",
+				function()
+					Snacks.lazygit.log_file()
+				end,
+				desc = "Current file history",
+			},
 		},
 	},
 	{
@@ -335,6 +365,7 @@ require("lazy").setup({
 				{ "<leader>f", group = "Find" },
 				{ "<leader>s", group = "Search" },
 				{ "<leader>q", group = "Session" },
+				{ "<leader>g", group = "Git" },
 			},
 		},
 	},
