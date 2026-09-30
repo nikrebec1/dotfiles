@@ -50,6 +50,7 @@ vim.o.breakindent = true
 vim.o.confirm = true -- ask instead of failing on :q with unsaved changes
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
+vim.o.fileformats = "unix,dos"
 vim.schedule(function()
 	vim.o.clipboard = "unnamedplus"
 end) -- Sync with Windows clipboard
@@ -185,7 +186,9 @@ require("lazy").setup({
 			require("mini.ai").setup()
 			require("mini.surround").setup()
 			require("mini.pairs").setup()
-			require("mini.diff").setup()
+			require("mini.diff").setup({
+				view = { style = "sign" },
+			})
 		end,
 	},
 	{
@@ -235,6 +238,14 @@ require("lazy").setup({
 					},
 				},
 			},
+			-- lazygit = {
+			-- 	config = {
+			-- 		os = {
+			-- 			edit = 'nvim --server "%NVIM%" --remote-send "q" && nvim --server "%NVIM%" --remote {{filename}}',
+			-- 			editAtLine = 'nvim --server "%NVIM%" --remote-send "q" && nvim --server "%NVIM%" --remote {{filename}} && nvim --server "%NVIM%" --remote-send ":{{line}}<CR>"',
+			-- 		},
+			-- 	},
+			-- },
 		},
 		keys = {
 			{
