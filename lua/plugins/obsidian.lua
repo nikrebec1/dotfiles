@@ -1,3 +1,13 @@
+-- Note IDs: 202610010904-my-note-title
+local function note_id(title)
+	local id = os.date("%Y%m%d%H%M")
+	if not title or title == "" then
+		return id
+	end
+	local slug = title:lower():gsub('[\\/:*?"<>|]', ""):gsub("%s+", "-")
+	return id .. "-" .. slug
+end
+
 return {
 	"obsidian-nvim/obsidian.nvim",
 	version = "*",
@@ -16,38 +26,20 @@ return {
 	opts = {
 		legacy_commands = false,
 		workspaces = {
-			{
-				name = "Mind Palace",
-				path = "~/vaults/Mind Palace",
-			},
+			{ name = "Mind Palace", path = "~/vaults/Mind Palace" },
 		},
-		picker = {
-			name = "snacks.picker",
-		},
-		sync = {
-			enabled = true,
-		},
+		picker = { name = "snacks.picker" },
+		sync = { enabled = true },
 		notes_subdir = "notes",
 		new_notes_location = "notes_subdir",
-		templates = {
-			folder = "templates",
-		},
-		note = {
-			template = "zettel-template.md",
-		},
+		templates = { folder = "templates" },
+		note = { template = "zettel-template.md" },
 		daily_notes = {
 			folder = "daily",
 			date_format = "%Y-%m-%d",
 			template = "daily-template.md",
 			default_tags = { "todo" },
 		},
-		note_id_func = function(title)
-			local id = os.date("%Y%m%d%H%M")
-			if not title or title == "" then
-				return id
-			end
-			local slug = title:lower():gsub('[\\/:*?"<>|]', ""):gsub("%s+", "-")
-			return id .. "-" .. slug
-		end,
+		note_id_func = note_id,
 	},
 }
