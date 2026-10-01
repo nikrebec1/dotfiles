@@ -11,9 +11,10 @@ return {
 		{ "<leader>ot", "<cmd>Obsidian tags<cr>", desc = "Tags" },
 		{ "<leader>od", "<cmd>Obsidian today<cr>", desc = "New daily template" },
 		{ "<leader>oy", "<cmd>Obsidian yesterday<cr>", desc = "Yesterday's daily template" },
+		{ "<leader>or", "<cmd>Obsidian tomorrow<cr>", desc = "Tomorrow's daily template" },
 	},
 	opts = {
-        legacy_commands = false,
+		legacy_commands = false,
 		workspaces = {
 			{
 				name = "Mind Palace",
@@ -34,12 +35,12 @@ return {
 		note = {
 			template = "zettel-template.md",
 		},
-        daily_notes = {
-            folder = "daily",
-            date_format = "%Y-%m-%d",
-            template = "daily-template.md",
-            default_tags = { "todo" },
-        },
+		daily_notes = {
+			folder = "daily",
+			date_format = "%Y-%m-%d",
+			template = "daily-template.md",
+			default_tags = { "todo" },
+		},
 		note_id_func = function(title)
 			local id = os.date("%Y%m%d%H%M")
 			if not title or title == "" then
