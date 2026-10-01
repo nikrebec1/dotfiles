@@ -59,7 +59,9 @@ return {
 					if not pcall(vim.treesitter.start) then
 						return
 					end
-					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					if vim.bo.filetype ~= "markdown" then
+						vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					end
 					vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 					vim.wo[0][0].foldmethod = "expr"
 				end,
