@@ -5,18 +5,19 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{e922762c-d7b6-4726-81fc-5d2a3357d07a}",
+	"firstWindowPreference": "persistedWindowLayout",
     "keybindings": 
     [
         {
-            "id": "Terminal.CopyToClipboard",
+            "id": null,
             "keys": "ctrl+c"
         },
         {
-            "id": "Terminal.PasteFromClipboard",
+            "id": null,
             "keys": "ctrl+v"
         },
         {
-            "id": "Terminal.DuplicatePaneAuto",
+            "id": null,
             "keys": "alt+shift+d"
         }
     ],
@@ -31,17 +32,17 @@
         "defaults": 
         {
             "colorScheme": "My Emerald Background",
-            "elevate": true,
+            "elevate": false,
             "font": 
             {
-                "face": "Cascadia Code"
+                "face": "JetBrainsMono Nerd Font"
             }
         },
         "list": 
         [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "elevate": true,
+                "elevate": false,
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -60,19 +61,48 @@
             },
             {
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+                "font": 
+                {
+                    "face": "CaskaydiaCove Nerd Font Mono"
+                },
                 "guid": "{e922762c-d7b6-4726-81fc-5d2a3357d07a}",
                 "hidden": false,
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
-		"startingDirectory": "%USERPROFILE%"
+                "startingDirectory": "%USERPROFILE%"
             },
             {
-                "commandline": "C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe",
+                "commandline": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+                "cursorShape": "filledBox",
+                "font": 
+                {
+                    "face": "CaskaydiaCove Nerd Font Mono"
+                },
                 "guid": "{df7776f3-bd39-47bb-92ad-d7e32198e374}",
                 "hidden": false,
-                "icon": "C:\\tools\\neovim\\nvim-win64\\share\\icons\\hicolor\\128x128\\apps\\nvim.png",
+                "icon": "C:\\Program Files\\Neovim\\share\\icons\\hicolor\\128x128\\apps\\nvim.png",
                 "name": "Nvim",
-		"startingDirectory": "%USERPROFILE%"
+                "padding": "0",
+                "startingDirectory": "%USERPROFILE%",
+				"background": "#161b2e"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": true,
+                "name": "Git Bash",
+                "source": "Git"
+            },
+            {
+                "guid": "{36a5957b-f4c9-5379-a075-46d709535c4b}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{97916ae0-c402-54aa-bb9f-859e6cd9bcef}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
