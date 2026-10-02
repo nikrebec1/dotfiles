@@ -6,9 +6,15 @@ vim.g.maplocalleader = " "
 
 -- Windows-only: zig as the C compiler for treesitter parsers
 if util.is_win then
-	vim.env.CC = "C:/Users/nikre/zigcc.cmd"
+	vim.env.CC = vim.fs.joinpath(vim.fn.stdpath("config"), "zigcc.cmd")
 end
 
+-- Angular
+vim.filetype.add({
+	pattern = {
+		[".*/src/app/.*%.html"] = "htmlangular",
+	},
+})
 -- Editor
 vim.o.termguicolors = true
 vim.o.number = true
