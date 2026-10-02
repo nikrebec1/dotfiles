@@ -52,6 +52,7 @@ return {
 				"scss",
 				"css",
 				"bash",
+				"regex",
 				"yaml",
 			})
 			vim.api.nvim_create_autocmd("FileType", {

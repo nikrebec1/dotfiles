@@ -22,24 +22,121 @@ return {
 		},
 		keys = {
 			-- Find
-			{ "<leader><space>", function() Snacks.picker.files() end, desc = "Find Files" },
-			{ "<leader>/", function() Snacks.picker.grep() end, desc = "Find Text" },
-			{ "<leader>fb", function() Snacks.picker.buffers() end, desc = "Find Buffers" },
-			{ "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-			{ "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-			{ "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+			{
+				"<leader><space>",
+				function()
+					Snacks.picker.files()
+				end,
+				desc = "Find Files",
+			},
+			{
+				"<leader>/",
+				function()
+					Snacks.picker.grep()
+				end,
+				desc = "Find Text",
+			},
+			{
+				"<leader>fb",
+				function()
+					Snacks.picker.buffers()
+				end,
+				desc = "Find Buffers",
+			},
+			{
+				"<leader>fc",
+				function()
+					Snacks.picker.files({ cwd = vim.fn.expand("~/dotfiles/") })
+				end,
+				desc = "Find Dotfiles",
+			},
+			{
+				"<leader>e",
+				function()
+					Snacks.explorer()
+				end,
+				desc = "File Explorer",
+			},
+			{
+				"<leader>sd",
+				function()
+					Snacks.picker.diagnostics()
+				end,
+				desc = "Diagnostics",
+			},
 			-- LSP
-			{ "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
-			{ "grr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
-			{ "gri", function() Snacks.picker.lsp_implementations() end, desc = "Implementations" },
-			{ "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Type definition" },
-			{ "gO", function() Snacks.picker.lsp_symbols() end, desc = "Document symbols" },
-			{ "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next reference" },
-			{ "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Previous reference" },
+			{
+				"gd",
+				function()
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+			{
+				"grr",
+				function()
+					Snacks.picker.lsp_references()
+				end,
+				nowait = true,
+				desc = "References",
+			},
+			{
+				"gri",
+				function()
+					Snacks.picker.lsp_implementations()
+				end,
+				desc = "Implementations",
+			},
+			{
+				"gy",
+				function()
+					Snacks.picker.lsp_type_definitions()
+				end,
+				desc = "Type definition",
+			},
+			{
+				"gO",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "Document symbols",
+			},
+			{
+				"]]",
+				function()
+					Snacks.words.jump(vim.v.count1)
+				end,
+				desc = "Next reference",
+			},
+			{
+				"[[",
+				function()
+					Snacks.words.jump(-vim.v.count1)
+				end,
+				desc = "Previous reference",
+			},
 			-- Git
-			{ "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-			{ "<leader>gl", function() Snacks.lazygit.log() end, desc = "Git log" },
-			{ "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Current file history" },
+			{
+				"<leader>gg",
+				function()
+					Snacks.lazygit()
+				end,
+				desc = "Lazygit",
+			},
+			{
+				"<leader>gl",
+				function()
+					Snacks.lazygit.log()
+				end,
+				desc = "Git log",
+			},
+			{
+				"<leader>gf",
+				function()
+					Snacks.lazygit.log_file()
+				end,
+				desc = "Current file history",
+			},
 		},
 	},
 	{
@@ -47,7 +144,13 @@ return {
 		cmd = "GrugFar",
 		opts = {},
 		keys = {
-			{ "<leader>sr", function() require("grug-far").open() end, desc = "Search and replace" },
+			{
+				"<leader>sr",
+				function()
+					require("grug-far").open()
+				end,
+				desc = "Search and replace",
+			},
 		},
 	},
 	{
@@ -55,7 +158,13 @@ return {
 		event = "BufReadPre",
 		opts = {},
 		keys = {
-			{ "<leader>qs", function() require("persistence").load() end, desc = "Restore session" },
+			{
+				"<leader>qs",
+				function()
+					require("persistence").load()
+				end,
+				desc = "Restore session",
+			},
 		},
 	},
 	{

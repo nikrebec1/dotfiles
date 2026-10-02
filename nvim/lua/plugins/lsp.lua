@@ -17,6 +17,7 @@ return {
 				"tailwindcss",
 				"eslint",
 			},
+			automatic_enable = { exclude = { "stylua" } },
 		},
 	},
 	{
